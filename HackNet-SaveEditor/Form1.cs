@@ -226,6 +226,8 @@ namespace HackNet_SaveEditor
 
         private void computerListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            userListBox.ClearSelected(); //deselect users - if we dont do this, we cannot refresh the user list
+
             int index = 0;
             for (int i = 0; i < computers.Count; i++)
             {
@@ -286,6 +288,8 @@ namespace HackNet_SaveEditor
                     //Console.WriteLine(users[i].Attributes.GetNamedItem("name").Value);
                 
             }
+
+            userListBox.Refresh(); //refresh listbox
 
             if ((users[index2].Attributes.GetNamedItem("known").Value == "True") ) { adminKnownFlag.Checked = true; }
             else { adminKnownFlag.Checked = false; }
@@ -411,6 +415,7 @@ namespace HackNet_SaveEditor
                     Console.WriteLine(users[i].Attributes.GetNamedItem("name").Value);
                 }
             }
+            
             computerPassInput.Text = users[index2].Attributes.GetNamedItem("pass").Value;
         }
     }
