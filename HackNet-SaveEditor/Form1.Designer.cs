@@ -48,6 +48,7 @@
             this.loadSaveButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.aboutLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.bInfoPage.SuspendLayout();
             this.listComputers.SuspendLayout();
@@ -248,23 +249,37 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // aboutLabel
+            // 
+            this.aboutLabel.AutoSize = true;
+            this.aboutLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aboutLabel.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.aboutLabel.Location = new System.Drawing.Point(597, 350);
+            this.aboutLabel.Name = "aboutLabel";
+            this.aboutLabel.Size = new System.Drawing.Size(35, 13);
+            this.aboutLabel.TabIndex = 4;
+            this.aboutLabel.Text = "About";
+            this.aboutLabel.Click += new System.EventHandler(this.aboutLabel_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 372);
+            this.Controls.Add(this.aboutLabel);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.loadSaveButton);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Hacknet Save Editor";
             this.tabControl1.ResumeLayout(false);
             this.bInfoPage.ResumeLayout(false);
             this.bInfoPage.PerformLayout();
             this.listComputers.ResumeLayout(false);
             this.listComputers.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -289,6 +304,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox missionInput;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label aboutLabel;
     }
 }
 

@@ -322,5 +322,10 @@ namespace HackNet_SaveEditor
         {
             AllocConsole();
         }
+
+        private void aboutLabel_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Open-Source Hacknet Save Editor \n" + "Created by J03L // joelastley555 \n" + "Find me on Discord at J0w03L#0606.", "About Hacknet Save Editor");    
+        }
     }
 }
