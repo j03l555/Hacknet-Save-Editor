@@ -226,6 +226,7 @@ namespace HackNet_SaveEditor
 
         private void computerListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            userListBox.Items.Clear(); //reset user list
             userListBox.ClearSelected(); //deselect users - if we dont do this, we cannot refresh the user list
 
             int index = 0;
@@ -367,7 +368,7 @@ namespace HackNet_SaveEditor
 
         private void userListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            userListBox.Refresh();
             int index = 0;
             for (int i = 0; i < computers.Count; i++)
             {
