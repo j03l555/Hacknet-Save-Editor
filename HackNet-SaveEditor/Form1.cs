@@ -35,9 +35,9 @@ namespace HackNet_SaveEditor
             openFileD.Filter = "save_*.xml|*.xml";
             openFileD.ShowDialog();
             Stream save_file = openFileD.OpenFile();
-            // Debugging purposes: 
+            //Debugging purposes: 
             Console.WriteLine(openFileD.FileName);
-            // call the loading function.
+            //call the loading function.
             loadSAVE(save_file);
         }
 
