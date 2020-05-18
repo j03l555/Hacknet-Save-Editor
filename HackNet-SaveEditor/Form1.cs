@@ -1,4 +1,16 @@
-﻿using System;
+﻿/*
+ * Hacknet Save Editor
+ * An open-source save editor for the game Hacknet.
+ * 
+ * ===========================================================
+ * Created by J03L
+ * 
+ * Discord: J0w03L#0606
+ * ===========================================================
+ */
+
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,8 +27,6 @@ namespace HackNet_SaveEditor
 {
     public partial class Form1 : Form
     {
-        public string currentFile = "null";
-        public int valcount = 0; //dont forget to increment this as new features are added! if this value is incorrect some values will not get saved!
         public OpenFileDialog openFileD = new OpenFileDialog();
         public XmlNodeList computers;
         public XmlDataDocument xmlsav;
@@ -131,13 +141,6 @@ namespace HackNet_SaveEditor
             oldsavefile.Position = 0;
             oldsavefile.CopyTo(save_backup);
             save_backup.Close();
-
-
-            //Now we grab the values that we need to set.
-            /*
-            Array hnValues = new Array[valcount]; //this is the array that we store our new values into. these values then get copied into the new save file.
-            hnValues =
-            */
             
             //Load save file
             //XmlDataDocument xmlsav = new XmlDataDocument();
