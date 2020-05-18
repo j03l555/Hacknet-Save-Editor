@@ -49,6 +49,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.aboutLabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.computerPassInput = new System.Windows.Forms.TextBox();
+            this.userListBox = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.bInfoPage.SuspendLayout();
             this.listComputers.SuspendLayout();
@@ -160,6 +163,9 @@
             // 
             // listComputers
             // 
+            this.listComputers.Controls.Add(this.userListBox);
+            this.listComputers.Controls.Add(this.computerPassInput);
+            this.listComputers.Controls.Add(this.label6);
             this.listComputers.Controls.Add(this.adminKnownFlag);
             this.listComputers.Controls.Add(this.button2);
             this.listComputers.Controls.Add(this.currentComputerName);
@@ -177,7 +183,7 @@
             // 
             this.adminKnownFlag.AutoSize = true;
             this.adminKnownFlag.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.adminKnownFlag.Location = new System.Drawing.Point(180, 30);
+            this.adminKnownFlag.Location = new System.Drawing.Point(180, 32);
             this.adminKnownFlag.Name = "adminKnownFlag";
             this.adminKnownFlag.Size = new System.Drawing.Size(146, 17);
             this.adminKnownFlag.TabIndex = 4;
@@ -196,7 +202,7 @@
             // 
             // currentComputerName
             // 
-            this.currentComputerName.Location = new System.Drawing.Point(272, 4);
+            this.currentComputerName.Location = new System.Drawing.Point(275, 6);
             this.currentComputerName.Name = "currentComputerName";
             this.currentComputerName.Size = new System.Drawing.Size(100, 20);
             this.currentComputerName.TabIndex = 2;
@@ -204,7 +210,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(180, 7);
+            this.label3.Location = new System.Drawing.Point(183, 10);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 13);
             this.label3.TabIndex = 1;
@@ -261,6 +267,31 @@
             this.aboutLabel.Text = "About";
             this.aboutLabel.Click += new System.EventHandler(this.aboutLabel_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(452, 13);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Password:";
+            // 
+            // computerPassInput
+            // 
+            this.computerPassInput.Location = new System.Drawing.Point(508, 10);
+            this.computerPassInput.Name = "computerPassInput";
+            this.computerPassInput.Size = new System.Drawing.Size(100, 20);
+            this.computerPassInput.TabIndex = 6;
+            // 
+            // userListBox
+            // 
+            this.userListBox.FormattingEnabled = true;
+            this.userListBox.Location = new System.Drawing.Point(381, 6);
+            this.userListBox.Name = "userListBox";
+            this.userListBox.Size = new System.Drawing.Size(65, 160);
+            this.userListBox.TabIndex = 7;
+            this.userListBox.SelectedIndexChanged += new System.EventHandler(this.userListBox_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,6 +336,9 @@
         private System.Windows.Forms.TextBox missionInput;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label aboutLabel;
+        private System.Windows.Forms.ListBox userListBox;
+        private System.Windows.Forms.TextBox computerPassInput;
+        private System.Windows.Forms.Label label6;
     }
 }
 
