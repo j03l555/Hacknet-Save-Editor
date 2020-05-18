@@ -44,7 +44,16 @@ namespace HackNet_SaveEditor
             openFileD.Title = "Load Hacknet File";
             openFileD.Filter = "save_*.xml|*.xml";
             openFileD.ShowDialog();
-            Stream save_file = openFileD.OpenFile();
+            Stream save_file;
+            try
+            {
+                save_file = openFileD.OpenFile();
+            }
+            catch (IndexOutOfRangeException)
+            {
+                return; //Do nothing -- This prevents the program from crashing if the user closes the dialog box
+            }
+            
             //Debugging purposes: 
             Console.WriteLine(openFileD.FileName);
             //call the loading function.
@@ -191,6 +200,7 @@ namespace HackNet_SaveEditor
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             SaveFileDialog saveFileD = new SaveFileDialog();
             saveFileD.InitialDirectory = @Environment.GetEnvironmentVariable("userprofile") + @"\Documents\My Games\Hacknet\Accounts"; //Set the default directory - this is where Hacknet stores it's save files by default.
             saveFileD.OverwritePrompt = true; //Ask the user if they want to overwrite an existing save, should they select one.
@@ -199,8 +209,15 @@ namespace HackNet_SaveEditor
             saveFileD.Title = "Save Hacknet File";
             saveFileD.Filter = "save_*.xml|*.xml";
             saveFileD.ShowDialog();
-
-            Stream save_file = saveFileD.OpenFile();
+            Stream save_file;
+            try
+            {
+                save_file = saveFileD.OpenFile();
+            }
+            catch (IndexOutOfRangeException)
+            {
+                return; //Do nothing -- This prevents the program from crashing if the user closes the dialog box
+            }
             //Debugging purposes:
             Console.WriteLine(saveFileD.FileName);
             //call the saving function.
