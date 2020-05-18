@@ -403,7 +403,7 @@ namespace HackNet_SaveEditor
                     Console.WriteLine(userListBox.SelectedItem.ToString()); //debugging
                     if (users[i].Attributes.GetNamedItem("name").Value == userListBox.SelectedItem.ToString())
                     {
-                        Console.WriteLine("Found admin user successfully!");
+                        Console.WriteLine("Found user successfully!");
                         index2 = i;
                         break;
                     }
@@ -411,6 +411,7 @@ namespace HackNet_SaveEditor
                     Console.WriteLine(users[i].Attributes.GetNamedItem("name").Value);
                 }
             }
+            computerPassInput.Text = users[index2].Attributes.GetNamedItem("pass").Value;
         }
     }
 }
