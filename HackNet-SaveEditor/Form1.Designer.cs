@@ -54,10 +54,17 @@
             this.userListBox = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.securityInput = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.portsToCrackInput = new System.Windows.Forms.NumericUpDown();
+            this.uncrackableFlag = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.bInfoPage.SuspendLayout();
             this.listComputers.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.securityInput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.portsToCrackInput)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -167,6 +174,11 @@
             // listComputers
             // 
             this.listComputers.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.listComputers.Controls.Add(this.uncrackableFlag);
+            this.listComputers.Controls.Add(this.portsToCrackInput);
+            this.listComputers.Controls.Add(this.label8);
+            this.listComputers.Controls.Add(this.securityInput);
+            this.listComputers.Controls.Add(this.label7);
             this.listComputers.Controls.Add(this.panel1);
             this.listComputers.Controls.Add(this.adminKnownFlag);
             this.listComputers.Controls.Add(this.button2);
@@ -185,7 +197,7 @@
             // 
             this.adminKnownFlag.AutoSize = true;
             this.adminKnownFlag.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.adminKnownFlag.Location = new System.Drawing.Point(180, 32);
+            this.adminKnownFlag.Location = new System.Drawing.Point(186, 32);
             this.adminKnownFlag.Name = "adminKnownFlag";
             this.adminKnownFlag.Size = new System.Drawing.Size(146, 17);
             this.adminKnownFlag.TabIndex = 4;
@@ -316,6 +328,61 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(183, 57);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(48, 13);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Security:";
+            // 
+            // securityInput
+            // 
+            this.securityInput.Location = new System.Drawing.Point(237, 55);
+            this.securityInput.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.securityInput.Name = "securityInput";
+            this.securityInput.Size = new System.Drawing.Size(28, 20);
+            this.securityInput.TabIndex = 10;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(183, 84);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(77, 13);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Ports to Crack:";
+            // 
+            // portsToCrackInput
+            // 
+            this.portsToCrackInput.Location = new System.Drawing.Point(266, 82);
+            this.portsToCrackInput.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.portsToCrackInput.Name = "portsToCrackInput";
+            this.portsToCrackInput.Size = new System.Drawing.Size(31, 20);
+            this.portsToCrackInput.TabIndex = 12;
+            // 
+            // uncrackableFlag
+            // 
+            this.uncrackableFlag.AutoSize = true;
+            this.uncrackableFlag.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.uncrackableFlag.Location = new System.Drawing.Point(186, 108);
+            this.uncrackableFlag.Name = "uncrackableFlag";
+            this.uncrackableFlag.Size = new System.Drawing.Size(93, 17);
+            this.uncrackableFlag.TabIndex = 13;
+            this.uncrackableFlag.Text = "Uncrackable?";
+            this.uncrackableFlag.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.uncrackableFlag.UseVisualStyleBackColor = true;
+            this.uncrackableFlag.CheckedChanged += new System.EventHandler(this.uncrackableFlag_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,6 +402,8 @@
             this.listComputers.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.securityInput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.portsToCrackInput)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,6 +436,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.CheckBox uncrackableFlag;
+        private System.Windows.Forms.NumericUpDown portsToCrackInput;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.NumericUpDown securityInput;
+        private System.Windows.Forms.Label label7;
     }
 }
 

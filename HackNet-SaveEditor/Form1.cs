@@ -294,6 +294,17 @@ namespace HackNet_SaveEditor
 
             if ((users[index2].Attributes.GetNamedItem("known").Value == "True") ) { adminKnownFlag.Checked = true; }
             else { adminKnownFlag.Checked = false; }
+
+            XmlNode portsToCrack = computers[index].SelectSingleNode("security").Attributes.GetNamedItem("portsToCrack");
+            if (portsToCrack.Value == "9999998")
+            {
+                uncrackableFlag.Checked = true;
+            }
+            else
+            {
+                uncrackableFlag.Checked = false;
+                portsToCrackInput.Value = int.Parse(portsToCrack.Value);
+            }
             Console.WriteLine(adminKnownFlag.Checked.ToString());
             Console.WriteLine(users[index2].Attributes.GetNamedItem("pass").Value);
             Console.WriteLine(users[index2].ParentNode.ParentNode.Attributes.GetNamedItem("name").Value);
@@ -348,6 +359,15 @@ namespace HackNet_SaveEditor
             }
             if (adminKnownFlag.Checked == true) { users[index2].Attributes.GetNamedItem("known").Value = "True"; }
             else { users[index2].Attributes.GetNamedItem("known").Value = "False"; }
+            XmlNode portsToCrack = computers[index].SelectSingleNode("security").Attributes.GetNamedItem("portsToCrack");
+            if (uncrackableFlag.Checked == true)
+            {
+                portsToCrack.Value = "9999998"; //this value makes it have that uncrackable security that you see at the end of the game
+            }
+            else
+            {
+                portsToCrack.Value = portsToCrackInput.Value.ToString();
+            }
             Console.WriteLine(adminKnownFlag.Checked.ToString());
             Console.WriteLine("DEBUG:");
             Console.WriteLine(users[index2].Attributes.GetNamedItem("known").Value);
@@ -473,6 +493,18 @@ namespace HackNet_SaveEditor
 
             users[index2].Attributes.GetNamedItem("pass").Value = computerPassInput.Text;
             Console.WriteLine("Saved password as '" + computerPassInput.Text + "' successfully!");
+        }
+
+        private void uncrackableFlag_CheckedChanged(object sender, EventArgs e)
+        {
+            if (uncrackableFlag.Checked == true)
+            {
+                portsToCrackInput.Enabled = false;
+            }
+            else
+            {
+                portsToCrackInput.Enabled = true;
+            }
         }
     }
 }
