@@ -6,6 +6,6 @@ An open-source save editor for the game Hacknet.
 * Toggle Mail Icon
 * Edit Account Username
 * View Computers
-* * View Users
-* * * View their passwords
-* * Toggle admin password as known
+  * View Users
+    * View and edit their passwords
+  * Toggle admin password as known
