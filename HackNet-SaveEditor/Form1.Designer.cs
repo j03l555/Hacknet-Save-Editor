@@ -52,9 +52,12 @@
             this.label6 = new System.Windows.Forms.Label();
             this.computerPassInput = new System.Windows.Forms.TextBox();
             this.userListBox = new System.Windows.Forms.ListBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.bInfoPage.SuspendLayout();
             this.listComputers.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -163,9 +166,7 @@
             // 
             // listComputers
             // 
-            this.listComputers.Controls.Add(this.userListBox);
-            this.listComputers.Controls.Add(this.computerPassInput);
-            this.listComputers.Controls.Add(this.label6);
+            this.listComputers.Controls.Add(this.panel1);
             this.listComputers.Controls.Add(this.adminKnownFlag);
             this.listComputers.Controls.Add(this.button2);
             this.listComputers.Controls.Add(this.currentComputerName);
@@ -196,7 +197,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 23);
             this.button2.TabIndex = 3;
-            this.button2.Text = "Save Edits";
+            this.button2.Text = "Apply Edits";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -270,7 +271,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(452, 13);
+            this.label6.Location = new System.Drawing.Point(69, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 5;
@@ -278,25 +279,46 @@
             // 
             // computerPassInput
             // 
-            this.computerPassInput.Location = new System.Drawing.Point(508, 10);
+            this.computerPassInput.Location = new System.Drawing.Point(128, 6);
             this.computerPassInput.Name = "computerPassInput";
-            this.computerPassInput.Size = new System.Drawing.Size(100, 20);
+            this.computerPassInput.Size = new System.Drawing.Size(97, 20);
             this.computerPassInput.TabIndex = 6;
             // 
             // userListBox
             // 
             this.userListBox.FormattingEnabled = true;
-            this.userListBox.Location = new System.Drawing.Point(381, 6);
+            this.userListBox.Location = new System.Drawing.Point(3, 6);
             this.userListBox.Name = "userListBox";
             this.userListBox.Size = new System.Drawing.Size(65, 160);
             this.userListBox.TabIndex = 7;
             this.userListBox.SelectedIndexChanged += new System.EventHandler(this.userListBox_SelectedIndexChanged);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.userListBox);
+            this.panel1.Controls.Add(this.computerPassInput);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Location = new System.Drawing.Point(381, 10);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(228, 191);
+            this.panel1.TabIndex = 8;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(133, 165);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(92, 23);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Apply Changes";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 372);
+            this.ClientSize = new System.Drawing.Size(665, 372);
             this.Controls.Add(this.aboutLabel);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
@@ -309,6 +331,8 @@
             this.bInfoPage.PerformLayout();
             this.listComputers.ResumeLayout(false);
             this.listComputers.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,6 +363,8 @@
         private System.Windows.Forms.ListBox userListBox;
         private System.Windows.Forms.TextBox computerPassInput;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button4;
     }
 }
 

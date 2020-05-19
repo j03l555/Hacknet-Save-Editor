@@ -419,5 +419,60 @@ namespace HackNet_SaveEditor
             
             computerPassInput.Text = users[index2].Attributes.GetNamedItem("pass").Value;
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //Save edits to user
+            int index = 0;
+            for (int i = 0; i < computers.Count; i++)
+            {
+                if (computers[i].Attributes.GetNamedItem("id").Value == computerListBox.SelectedItem)
+                {
+                    Console.WriteLine("Found selected computer successfully!");
+                    index = i;
+                    break;
+                }
+                Console.WriteLine(i);
+                Console.WriteLine(computers[i].Attributes.GetNamedItem("id").Value);
+
+
+            }
+
+            int index3 = 0;
+
+            for (int i = 0; i < computers[index].ChildNodes.Count; i++)
+            {
+                if (computers[index].ChildNodes[i].Name == "users")
+                {
+                    Console.WriteLine("Found users node successfully!");
+                    index3 = i;
+                    break;
+                }
+                Console.WriteLine(i);
+                //Console.WriteLine(users[i].Attributes.GetNamedItem("name").Value);
+            }
+
+            XmlNodeList users = computers[index].ChildNodes[index3].ChildNodes;
+
+            int index2 = 0;
+            for (int i = 0; i < users.Count; i++)
+            {
+                if (users[i].NodeType == XmlNodeType.Element)
+                {
+                    Console.WriteLine(userListBox.SelectedItem.ToString()); //debugging
+                    if (users[i].Attributes.GetNamedItem("name").Value == userListBox.SelectedItem.ToString())
+                    {
+                        Console.WriteLine("Found user successfully!");
+                        index2 = i;
+                        break;
+                    }
+                    Console.WriteLine(i);
+                    Console.WriteLine(users[i].Attributes.GetNamedItem("name").Value);
+                }
+            }
+
+            users[index2].Attributes.GetNamedItem("pass").Value = computerPassInput.Text;
+            Console.WriteLine("Saved password as '" + computerPassInput.Text + "' successfully!");
+        }
     }
 }
