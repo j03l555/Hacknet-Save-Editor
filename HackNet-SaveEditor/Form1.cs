@@ -305,6 +305,34 @@ namespace HackNet_SaveEditor
                 uncrackableFlag.Checked = false;
                 portsToCrackInput.Value = int.Parse(portsToCrack.Value);
             }
+
+            XmlNode portsOpen = computers[index].SelectSingleNode("portsOpen");
+            int[] portNumbers = { 221, 22, 80, 25, 21, 1433, 104, 6881, 443, 192, 554, 9418, 3724, 3659 };
+            string[] currentPorts = portsOpen.InnerText.TrimStart(' ').Split(' ');
+            CheckedListBox.ObjectCollection portList = openPortsList.Items;
+            Console.WriteLine(portsOpen.InnerText);
+            Console.WriteLine(portsOpen.InnerText.TrimStart(' '));
+            for (int i = 0; i < portNumbers.Length; i++)
+            {
+                //Console.WriteLine("======["+currentPorts[0]+"/"+currentPorts[1]+"]======");
+                //if (i <= currentPorts.Count())
+                //{
+                //    Console.WriteLine(currentPorts[i]);
+                //}
+
+                Console.WriteLine(portNumbers[i].ToString());
+                if (currentPorts.Contains(portNumbers[i].ToString()))
+                {
+                    openPortsList.SetItemChecked(i, true);
+
+                }
+                else
+                {
+                    openPortsList.SetItemChecked(i, false);
+                }
+                Console.WriteLine("'" + portNumbers[i] + "' = '"+openPortsList.GetItemChecked(i)+"'");
+            }
+
             Console.WriteLine(adminKnownFlag.Checked.ToString());
             Console.WriteLine(users[index2].Attributes.GetNamedItem("pass").Value);
             Console.WriteLine(users[index2].ParentNode.ParentNode.Attributes.GetNamedItem("name").Value);
@@ -368,6 +396,25 @@ namespace HackNet_SaveEditor
             {
                 portsToCrack.Value = portsToCrackInput.Value.ToString();
             }
+
+            //now we need to generate our string value for our ports.
+            string portValue = " "; //we start with a space, as that should always be present at the start of this value.
+            int[] portNumbers = {221, 22, 80, 25, 21, 1433, 104, 6881, 443, 192, 554, 9418, 3724, 3659};
+            
+            CheckedListBox.ObjectCollection portList = openPortsList.Items;
+            for (int i = 0; i < portNumbers.Length; i++)
+            {
+                if (openPortsList.CheckedIndices.Contains(i))
+                {
+                    portValue = portValue + portNumbers[i].ToString() + ' ';
+                    
+                }
+                Console.WriteLine("'"+portValue+"'");
+            }
+
+            portValue = portValue.TrimEnd(' ');
+            computers[index].SelectSingleNode("portsOpen").InnerText = portValue;
+            Console.WriteLine("'" + portValue + "'");
             Console.WriteLine(adminKnownFlag.Checked.ToString());
             Console.WriteLine("DEBUG:");
             Console.WriteLine(users[index2].Attributes.GetNamedItem("known").Value);

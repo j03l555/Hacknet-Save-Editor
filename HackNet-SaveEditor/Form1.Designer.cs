@@ -40,6 +40,17 @@
             this.userNameInput = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.listComputers = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.uncrackableFlag = new System.Windows.Forms.CheckBox();
+            this.portsToCrackInput = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.securityInput = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.userListBox = new System.Windows.Forms.ListBox();
+            this.computerPassInput = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.adminKnownFlag = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
             this.currentComputerName = new System.Windows.Forms.TextBox();
@@ -49,22 +60,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.aboutLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.computerPassInput = new System.Windows.Forms.TextBox();
-            this.userListBox = new System.Windows.Forms.ListBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.securityInput = new System.Windows.Forms.NumericUpDown();
-            this.label8 = new System.Windows.Forms.Label();
-            this.portsToCrackInput = new System.Windows.Forms.NumericUpDown();
-            this.uncrackableFlag = new System.Windows.Forms.CheckBox();
+            this.openPortsList = new System.Windows.Forms.CheckedListBox();
             this.tabControl1.SuspendLayout();
             this.bInfoPage.SuspendLayout();
             this.listComputers.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.securityInput)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.portsToCrackInput)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.securityInput)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -174,6 +176,8 @@
             // listComputers
             // 
             this.listComputers.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.listComputers.Controls.Add(this.openPortsList);
+            this.listComputers.Controls.Add(this.label9);
             this.listComputers.Controls.Add(this.uncrackableFlag);
             this.listComputers.Controls.Add(this.portsToCrackInput);
             this.listComputers.Controls.Add(this.label8);
@@ -192,6 +196,122 @@
             this.listComputers.TabIndex = 1;
             this.listComputers.Text = "Computers";
             this.listComputers.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(183, 128);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(34, 13);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Ports:";
+            // 
+            // uncrackableFlag
+            // 
+            this.uncrackableFlag.AutoSize = true;
+            this.uncrackableFlag.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.uncrackableFlag.Location = new System.Drawing.Point(186, 108);
+            this.uncrackableFlag.Name = "uncrackableFlag";
+            this.uncrackableFlag.Size = new System.Drawing.Size(93, 17);
+            this.uncrackableFlag.TabIndex = 13;
+            this.uncrackableFlag.Text = "Uncrackable?";
+            this.uncrackableFlag.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.uncrackableFlag.UseVisualStyleBackColor = true;
+            this.uncrackableFlag.CheckedChanged += new System.EventHandler(this.uncrackableFlag_CheckedChanged);
+            // 
+            // portsToCrackInput
+            // 
+            this.portsToCrackInput.Location = new System.Drawing.Point(266, 82);
+            this.portsToCrackInput.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.portsToCrackInput.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
+            this.portsToCrackInput.Name = "portsToCrackInput";
+            this.portsToCrackInput.Size = new System.Drawing.Size(31, 20);
+            this.portsToCrackInput.TabIndex = 12;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(183, 84);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(77, 13);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Ports to Crack:";
+            // 
+            // securityInput
+            // 
+            this.securityInput.Location = new System.Drawing.Point(237, 55);
+            this.securityInput.Maximum = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            this.securityInput.Name = "securityInput";
+            this.securityInput.Size = new System.Drawing.Size(28, 20);
+            this.securityInput.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(183, 57);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(48, 13);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Security:";
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.userListBox);
+            this.panel1.Controls.Add(this.computerPassInput);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Location = new System.Drawing.Point(381, 6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(228, 191);
+            this.panel1.TabIndex = 8;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(133, 165);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(92, 23);
+            this.button4.TabIndex = 8;
+            this.button4.Text = "Apply Changes";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // userListBox
+            // 
+            this.userListBox.FormattingEnabled = true;
+            this.userListBox.Location = new System.Drawing.Point(3, 6);
+            this.userListBox.Name = "userListBox";
+            this.userListBox.Size = new System.Drawing.Size(65, 160);
+            this.userListBox.TabIndex = 7;
+            this.userListBox.SelectedIndexChanged += new System.EventHandler(this.userListBox_SelectedIndexChanged);
+            // 
+            // computerPassInput
+            // 
+            this.computerPassInput.Location = new System.Drawing.Point(128, 6);
+            this.computerPassInput.Name = "computerPassInput";
+            this.computerPassInput.Size = new System.Drawing.Size(97, 20);
+            this.computerPassInput.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(69, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Password:";
             // 
             // adminKnownFlag
             // 
@@ -281,112 +401,28 @@
             this.aboutLabel.Text = "About";
             this.aboutLabel.Click += new System.EventHandler(this.aboutLabel_Click);
             // 
-            // label6
+            // openPortsList
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(69, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Password:";
-            // 
-            // computerPassInput
-            // 
-            this.computerPassInput.Location = new System.Drawing.Point(128, 6);
-            this.computerPassInput.Name = "computerPassInput";
-            this.computerPassInput.Size = new System.Drawing.Size(97, 20);
-            this.computerPassInput.TabIndex = 6;
-            // 
-            // userListBox
-            // 
-            this.userListBox.FormattingEnabled = true;
-            this.userListBox.Location = new System.Drawing.Point(3, 6);
-            this.userListBox.Name = "userListBox";
-            this.userListBox.Size = new System.Drawing.Size(65, 160);
-            this.userListBox.TabIndex = 7;
-            this.userListBox.SelectedIndexChanged += new System.EventHandler(this.userListBox_SelectedIndexChanged);
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.userListBox);
-            this.panel1.Controls.Add(this.computerPassInput);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(381, 6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(228, 191);
-            this.panel1.TabIndex = 8;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(133, 165);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(92, 23);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Apply Changes";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(183, 57);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 13);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Security:";
-            // 
-            // securityInput
-            // 
-            this.securityInput.Location = new System.Drawing.Point(237, 55);
-            this.securityInput.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.securityInput.Name = "securityInput";
-            this.securityInput.Size = new System.Drawing.Size(28, 20);
-            this.securityInput.TabIndex = 10;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(183, 84);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 13);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Ports to Crack:";
-            // 
-            // portsToCrackInput
-            // 
-            this.portsToCrackInput.Location = new System.Drawing.Point(266, 82);
-            this.portsToCrackInput.Maximum = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            this.portsToCrackInput.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
-            this.portsToCrackInput.Name = "portsToCrackInput";
-            this.portsToCrackInput.Size = new System.Drawing.Size(31, 20);
-            this.portsToCrackInput.TabIndex = 12;
-            // 
-            // uncrackableFlag
-            // 
-            this.uncrackableFlag.AutoSize = true;
-            this.uncrackableFlag.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.uncrackableFlag.Location = new System.Drawing.Point(186, 108);
-            this.uncrackableFlag.Name = "uncrackableFlag";
-            this.uncrackableFlag.Size = new System.Drawing.Size(93, 17);
-            this.uncrackableFlag.TabIndex = 13;
-            this.uncrackableFlag.Text = "Uncrackable?";
-            this.uncrackableFlag.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.uncrackableFlag.UseVisualStyleBackColor = true;
-            this.uncrackableFlag.CheckedChanged += new System.EventHandler(this.uncrackableFlag_CheckedChanged);
+            this.openPortsList.FormattingEnabled = true;
+            this.openPortsList.Items.AddRange(new object[] {
+            "211 - Transfer",
+            "22 - SSH",
+            "80 - HTTP WebServer",
+            "25 - SMTP MailServer",
+            "21 - FTP Server",
+            "1433 - SQL Server",
+            "104 - Medical Services",
+            "6881 - BitTorrent",
+            "443 - HTTPS (SSL)",
+            "192 - Pacific Dedicated",
+            "554 - RTSP",
+            "9418 - Version Control",
+            "3724 - Blizzard Updater",
+            "3659 - eOS Connection Manager"});
+            this.openPortsList.Location = new System.Drawing.Point(186, 144);
+            this.openPortsList.Name = "openPortsList";
+            this.openPortsList.Size = new System.Drawing.Size(193, 94);
+            this.openPortsList.TabIndex = 1;
             // 
             // Form1
             // 
@@ -405,10 +441,10 @@
             this.bInfoPage.PerformLayout();
             this.listComputers.ResumeLayout(false);
             this.listComputers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.portsToCrackInput)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.securityInput)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.securityInput)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.portsToCrackInput)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -446,6 +482,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.NumericUpDown securityInput;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.CheckedListBox openPortsList;
     }
 }
 
