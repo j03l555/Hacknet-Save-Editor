@@ -166,6 +166,7 @@
             // 
             // listComputers
             // 
+            this.listComputers.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.listComputers.Controls.Add(this.panel1);
             this.listComputers.Controls.Add(this.adminKnownFlag);
             this.listComputers.Controls.Add(this.button2);
@@ -295,11 +296,12 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.userListBox);
             this.panel1.Controls.Add(this.computerPassInput);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(381, 10);
+            this.panel1.Location = new System.Drawing.Point(381, 6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(228, 191);
             this.panel1.TabIndex = 8;
