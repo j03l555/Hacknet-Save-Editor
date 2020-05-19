@@ -366,6 +366,11 @@
             0,
             0,
             0});
+            this.portsToCrackInput.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            -2147483648});
             this.portsToCrackInput.Name = "portsToCrackInput";
             this.portsToCrackInput.Size = new System.Drawing.Size(31, 20);
             this.portsToCrackInput.TabIndex = 12;
