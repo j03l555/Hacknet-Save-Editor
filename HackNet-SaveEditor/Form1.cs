@@ -317,7 +317,7 @@ namespace HackNet_SaveEditor
                 //Console.WriteLine("======["+currentPorts[0]+"/"+currentPorts[1]+"]======");
                 //if (i <= currentPorts.Count())
                 //{
-                //    Console.WriteLine(currentPorts[i]);
+                //    Console.WriteLine(currentPorts[i]); 
                 //}
 
                 Console.WriteLine(portNumbers[i].ToString());
